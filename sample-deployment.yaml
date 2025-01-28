@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mycltr
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: myctlr
+  template:
+    metadata:
+      labels:
+        app: mycltr
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: myctlr
+        image: YOUR_IMAGE
+        imagePullPolicy: Always
+        command:
+        - /bin/myctlr
+        - "--annotation"
+        - "myctlr/onchange-url"
