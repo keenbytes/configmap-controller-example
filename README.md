@@ -2,8 +2,9 @@
 Quick sample of Kubernetes controller that monitors ConfigMap resources with a specified annotation 
 and calls URL when change happens.
 
-This code is based on the [sample-controller](sample-controller) repository available from official
-Kubernetes repository, however, it does not have any Custom Resource Definition.
+This code is based on the [sample-controller](https://github.com/kubernetes/sample-controller) 
+repository available from official Kubernetes github, however, it does not have any
+Custom Resource Definition.
 
 ## Build
 Run `go build -o myctlr .` to build the binary.
